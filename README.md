@@ -96,4 +96,4 @@ void handleNumber(AdafruitIO_Data *data) {
 
 ```
 
-In the `if statement` you can see that if the `value is 1`, the strip have to set the color `Blue`. If you want to change it to an another color, you can change the RGB-color
+In the `if statement` you can see that if the `value is 1`, the strip have to set the color `Blue`. If you want to change it to an another color, you can change the RGB-color.
