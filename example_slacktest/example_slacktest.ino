@@ -4,7 +4,7 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(18, LEDpin, NEO_GRB + NEO_KHZ800); //getal = aantal LED's
 
 // set up the 'colourpicker' feed
-AdafruitIO_Feed *color = io.feed("color.analog");
+// AdafruitIO_Feed *color = io.feed("color.analog");
 AdafruitIO_Feed *slacktest = io.feed("slacktest");
 
 void setup() {
@@ -33,7 +33,7 @@ pinMode(LEDpin, OUTPUT);
  // the handleMessage function (defined below)
  // will be called whenever a message is
  // received from adafruit io.
- color->onMessage(handleMessage);
+//  color->onMessage(handleMessage);
  slacktest->onMessage(handleNumber);
 
  // wait for a connection
@@ -45,7 +45,7 @@ pinMode(LEDpin, OUTPUT);
  // we are connected
  Serial.println();
  Serial.println(io.statusText());
- color->get();
+//  color->get();
 // slacktest->get();
 
  // neopixels strip
@@ -101,34 +101,34 @@ void loop() {
 // this function is called whenever an 'analog' message
 // is received from Adafruit IO. it was attached to
 // the analog feed in the setup() function above.
-void handleMessage(AdafruitIO_Data *data) {
+// void handleMessage(AdafruitIO_Data *data) {
 
- Serial.println("Received HEX: ");
- Serial.println(data->value());
+//  Serial.println("Received HEX: ");
+//  Serial.println(data->value());
 
- long color = data->toNeoPixel();
+//  long color = data->toNeoPixel();
 
-   for(int i=0; i<18; ++i) {
-   strip.setPixelColor(i, color);
-    }
-   strip.show();
+//    for(int i=0; i<18; ++i) {
+//    strip.setPixelColor(i, color);
+//     }
+//    strip.show();
 
- // convert the data to integer
- //int reading = data->toInt();
-//Serial.println(reading);
+//  // convert the data to integer
+//  //int reading = data->toInt();
+// //Serial.println(reading);
 
- //Serial.print("received <- ");
+//  //Serial.print("received <- ");
 
 
- // write the current 'reading' to the led
- //#if defined(ARDUINO_ARCH_ESP32)
-   //ledcWrite(1, reading); // ESP32 analogWrite()
- //#else
- // analogWrite(D5, reading);
-// #endif
+//  // write the current 'reading' to the led
+//  //#if defined(ARDUINO_ARCH_ESP32)
+//    //ledcWrite(1, reading); // ESP32 analogWrite()
+//  //#else
+//  // analogWrite(D5, reading);
+// // #endif
 
- //analogWrite(LEDpin, reading);
-  }
+//  //analogWrite(LEDpin, reading);
+//   }
   
   void handleNumber(AdafruitIO_Data *data) {
     
