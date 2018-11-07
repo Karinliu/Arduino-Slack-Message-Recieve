@@ -64,7 +64,10 @@ Is your Arduino connected? Great! Go to Slack and open the channel where your Ar
 
 And? Did it turn on the leds blue?
 
-## can I change it into an another color?
+# Yes it works!
+Nice!
+
+## Can I change it into an another color?
 To change the color you can edit the code in the `void handleNumber(AdafruitIO_Data *data)`.
 
 If you can see in the code, I have used an `if/else` statement. 
